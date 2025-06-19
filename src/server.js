@@ -3,6 +3,8 @@ import connectDataBase from "./configs/database_connection.js";
 import cors from "cors";
 import morgan from "morgan";
 import { usuarioRoutes } from "./routes/usuarioRoutes.js";
+import { insigniaRoutes } from "./routes/insigniaRoutes.js";
+
 
 // Conectarse a la base de datos
 await connectDataBase();
@@ -17,5 +19,6 @@ app.use(morgan("dev"));
 // Definir las rutas API
 
 app.use("/api/usuarios", usuarioRoutes);
+app.use("/api/insignias", insigniaRoutes);
 
 export default app;
