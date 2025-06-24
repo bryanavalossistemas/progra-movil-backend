@@ -4,6 +4,11 @@ import cors from "cors";
 import morgan from "morgan";
 import { usuarioRoutes } from "./routes/usuarioRoutes.js";
 import { insigniaRoutes } from "./routes/insigniaRoutes.js";
+import { generoRoutes } from "./routes/generoRoutes.js";
+import { modulosRoutes } from "./routes/modulosRoutes.js";
+import { seccionesRoutes } from "./routes/seccionesRoutes.js";
+import { nivelesRoutes } from "./routes/nivelesRoutes.js";
+import { cuestionarioRoutes } from "./routes/cuestionarioRoutes.js";
 
 
 // Conectarse a la base de datos
@@ -20,5 +25,10 @@ app.use(morgan("dev"));
 
 app.use("/api/usuarios", usuarioRoutes);
 app.use("/api/insignias", insigniaRoutes);
+app.use("/api/generos", generoRoutes);
+app.use("/api/modulos", modulosRoutes);
+app.use("/api/secciones", seccionesRoutes);
+app.use("/api/niveles", nivelesRoutes);
+app.use("/api/cuestionarios", cuestionarioRoutes);
 
 export default app;

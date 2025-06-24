@@ -8,8 +8,8 @@ import { Tipo } from "../models/Tipo.js";
 import { UsuarioInsignia } from "../models/Usuario_Insignia.js";
 import { UsuarioProgreso } from "../models/Usuario_Progreso.js";
 import { Nivel } from "../models/Nivel.js";
-import { Seccion } from "../models/Seccion.js";
-import { Modulo } from "../models/Modulo.js";
+import { Seccion } from "../models/seccion.js";
+import { Modulo } from "../models/modulo.js";
 import { Pregunta } from "../models/Pregunta.js";
 import { Respuesta } from "../models/Respuesta.js";
 

@@ -1,7 +1,7 @@
 import { DataTypes } from 'sequelize';
 import sequelize from '../configs/database.js';
 
-export const Tipo = sequelize.define('Tipo', {
+export const Tipo = sequelize.define('Tipos', {
   id: { 
     type: DataTypes.INTEGER, 
     primaryKey: true, 

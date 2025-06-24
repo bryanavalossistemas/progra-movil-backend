@@ -1,8 +1,8 @@
 import { DataTypes } from 'sequelize';
 import sequelize from '../configs/database.js';
-;
 
-export const Seccion = sequelize.define('Seccion', {
+
+export const Seccion = sequelize.define('Secciones', {
   id: { 
     type: DataTypes.INTEGER, 
     primaryKey: true, 

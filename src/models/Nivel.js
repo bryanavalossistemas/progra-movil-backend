@@ -2,7 +2,7 @@ import { DataTypes } from 'sequelize';
 import sequelize from '../configs/database.js';
 
 
-export const Nivel = sequelize.define('Nivel', {
+export const Nivel = sequelize.define('Niveles', {
   id: { 
     type: DataTypes.INTEGER, 
     primaryKey: true, 

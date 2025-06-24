@@ -1,6 +1,5 @@
 import { where } from "sequelize";
-import Seccion from "../models/Seccion.js";
-import { ModulosController } from "./ModulosController.js";
+import {Seccion} from "../models/seccion.js";
 
 export class SeccionesController {
   static async EncontrarSecciones(req, res) {
@@ -21,10 +20,25 @@ export class SeccionesController {
     }
   }
 
-  static async EncontrarSeccionesPorModulos (req, res){
-    const {idModulo} = req.params;
-    const seccionesporModulo= await Seccion.findAll(where{idModulo})
-    
+ static async EncontrarSeccionesPorModulos(req, res) {
+  try {
+    const { id_Modulo } = req.params;
 
+    const seccionesPorModulo = await Seccion.findAll({
+      where: { id_Modulo },
+    });
+
+    return res.status(200).json({
+      message: "Secciones del módulo encontradas correctamente",
+      data: seccionesPorModulo,
+    });
+
+  } catch (error) {
+    console.error("Error al obtener secciones por módulo:", error);
+    return res.status(500).json({
+      message: "Error al obtener secciones por módulo",
+      error: error.message,
+    });
   }
+}
 }

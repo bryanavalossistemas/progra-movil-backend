@@ -8,11 +8,11 @@ export const UsuarioProgreso = sequelize.define('usuario_progreso', {
     primaryKey: true, 
     autoIncrement: true, 
     allowNull: false },
-  completado: { type: DataTypes.BOOLEAN,},
-  intentos:{ type: DataTypes.INTEGER,},
-  aciertos: {type: DataTypes.INTEGER,},
-  errores: {type: DataTypes.INTEGER,},
-  tiempo: {type: DataTypes.INTEGER}
+  completado: { type: DataTypes.BOOLEAN, defaultValue: false},
+  intentos:{ type: DataTypes.INTEGER, defaultValue: 0},
+  aciertos: {type: DataTypes.INTEGER, defaultValue: 0},
+  errores: {type: DataTypes.INTEGER, defaultValue:0},
+  tiempo: {type: DataTypes.INTEGER, defaultValue:0}
 }, { 
   timestamps: false 
 });
