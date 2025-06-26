@@ -191,3 +191,14 @@ INSERT INTO respuestas (id, respuesta, correcta, id_pregunta) VALUES (37, '17', 
 INSERT INTO respuestas (id, respuesta, correcta, id_pregunta) VALUES (38, '15', false, 10);
 INSERT INTO respuestas (id, respuesta, correcta, id_pregunta) VALUES (39, '20', false, 10);
 INSERT INTO respuestas (id, respuesta, correcta, id_pregunta) VALUES (40, '19', false, 10);
+
+
+INSERT INTO usuario (id, usuario, correo, contrasenia, edad, vidas, experiencia, nivel_experiencia, confirmed, id_genero) VALUES
+(1, 'rasecml', 'rasec@gmail.com', '1234', 21, 3, 0, 1, 0, 1),
+(2, 'bryanloa', 'bryan@gmail.com', 'abcdefg2345678', 21, 3, 30, 0, 0, 1),
+(3, 'dmitri', 'dmitri@gmail.com', 'abcdefg3456789', 21, 3, 0, 0, 0, 1),
+(4, 'javier', 'javier@gmail.com', 'abcdefg4567890', 21, 3, 300, 0, 0, 1),
+(5, 'usuarioXD', 'javier@gmail.com', 'abcdefg4567890', 21, 3, 50, 0, 0, 1);
+
+INSERT INTO tipos (id, nombre) VALUES (1, 'medalla');
+INSERT INTO tipos (id, nombre) VALUES (2, 'logro');
