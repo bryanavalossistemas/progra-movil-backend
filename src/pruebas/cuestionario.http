@@ -10,7 +10,225 @@ Content-Type: application/json
 
 {
   "id_usuario": 1,
-  "id_nivel": 2,
-  "idrespuesta": 31,
-  "preguntaActual": 3
+  "id_nivel": 1,
+  "idrespuesta":1 
 }
+
+###
+POST http://localhost:4000/api/cuestionarios/responder
+Content-Type: application/json
+
+{
+  "id_usuario": 1,
+  "id_nivel": 1,
+  "idrespuesta": 2
+}
+
+
+###
+POST http://localhost:4000/api/cuestionarios/responder
+Content-Type: application/json
+
+{
+  "id_usuario": 1,
+  "id_nivel": 1,
+  "idrespuesta": 3
+}
+
+###
+POST http://localhost:4000/api/cuestionarios/responder
+Content-Type: application/json
+
+{
+  "id_usuario": 1,
+  "id_nivel": 1,
+  "idrespuesta": 4
+}
+
+
+###
+POST http://localhost:4000/api/cuestionarios/responder
+Content-Type: application/json
+
+{
+  "id_usuario": 1,
+  "id_nivel": 1,
+  "idrespuesta": 5
+}
+
+
+###
+POST http://localhost:4000/api/cuestionarios/responder
+Content-Type: application/json
+
+{
+  "id_usuario": 1,
+  "id_nivel": 1,
+  "idrespuesta": 6
+}
+
+###
+POST http://localhost:4000/api/cuestionarios/responder
+Content-Type: application/json
+
+{
+  "id_usuario": 1,
+  "id_nivel": 1,
+  "idrespuesta": 7
+}
+
+###
+POST http://localhost:4000/api/cuestionarios/responder
+Content-Type: application/json
+
+{
+  "id_usuario": 1,
+  "id_nivel": 1,
+  "idrespuesta": 8
+  
+}
+
+###
+POST http://localhost:4000/api/cuestionarios/responder
+Content-Type: application/json
+
+{
+  "id_usuario": 1,
+  "id_nivel": 1,
+  "idrespuesta": 9
+  
+}
+
+###
+POST http://localhost:4000/api/cuestionarios/responder
+Content-Type: application/json
+
+{
+  "id_usuario": 1,
+  "id_nivel": 1,
+  "idrespuesta": 10
+  
+}
+
+###
+POST http://localhost:4000/api/cuestionarios/responder
+Content-Type: application/json
+
+{
+  "id_usuario": 1,
+  "id_nivel": 1,
+  "idrespuesta": 11
+  
+}
+
+###
+POST http://localhost:4000/api/cuestionarios/responder
+Content-Type: application/json
+
+{
+  "id_usuario": 1,
+  "id_nivel": 1,
+  "idrespuesta": 12
+  
+}
+
+###
+POST http://localhost:4000/api/cuestionarios/responder
+Content-Type: application/json
+
+{
+  "id_usuario": 1,
+  "id_nivel": 1,
+  "idrespuesta": 13
+  
+}
+
+###
+POST http://localhost:4000/api/cuestionarios/responder
+Content-Type: application/json
+
+{
+  "id_usuario": 1,
+  "id_nivel": 1,
+  "idrespuesta": 14
+  
+}
+
+
+###
+POST http://localhost:4000/api/cuestionarios/responder
+Content-Type: application/json
+
+{
+  "id_usuario": 1,
+  "id_nivel": 1,
+  "idrespuesta": 15
+  
+}
+
+
+###
+POST http://localhost:4000/api/cuestionarios/responder
+Content-Type: application/json
+
+{
+  "id_usuario": 1,
+  "id_nivel": 1,
+  "idrespuesta": 16
+  
+}
+
+
+
+###
+POST http://localhost:4000/api/cuestionarios/responder
+Content-Type: application/json
+
+{
+  "id_usuario": 1,
+  "id_nivel": 1,
+  "idrespuesta": 17
+  
+}
+
+
+###
+POST http://localhost:4000/api/cuestionarios/responder
+Content-Type: application/json
+
+{
+  "id_usuario": 1,
+  "id_nivel": 1,
+  "idrespuesta": 18
+  
+}
+
+###
+POST http://localhost:4000/api/cuestionarios/responder
+Content-Type: application/json
+
+{
+  "id_usuario": 1,
+  "id_nivel": 1,
+  "idrespuesta": 19
+  
+}
+
+###
+POST http://localhost:4000/api/cuestionarios/responder
+Content-Type: application/json
+
+{
+  "id_usuario": 1,
+  "id_nivel": 1,
+  "idrespuesta": 20
+  
+}
+
+
+
+
+
+
+
+

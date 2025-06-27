@@ -50,85 +50,95 @@ export class CuestionarioController {
 
 
   static async responderPregunta(req, res) {
-    try {
-      const {
-        id_usuario,
-        id_nivel,
-        idrespuesta,
-        preguntaActual
-      } = req.body;
+  try {
+    const { id_usuario, id_nivel, idrespuesta } = req.body;
 
-      // Buscar datos esenciales
-      const usuario = await Usuario.findByPk(id_usuario);
-      const [progreso, creado] = await UsuarioProgreso.findOrCreate({
-  where: { id_usuario, id_nivel }
-});
-      const respuesta = await Respuesta.findByPk(idrespuesta);
+    const usuario = await Usuario.findByPk(id_usuario);
+    const [progreso] = await UsuarioProgreso.findOrCreate({
+      where: { id_usuario, id_nivel }
+    });
 
-      if (!usuario || !progreso || !respuesta) {
-        return res.status(404).json({ message: "Datos no encontrados" });
+    const respuesta = await Respuesta.findByPk(idrespuesta, {
+      include: [{ model: Pregunta, as: 'pregunta' }]
+    });
+
+    if (!usuario || !progreso || !respuesta || !respuesta.pregunta) {
+      return res.status(404).json({ message: "Datos no encontrados" });
+    }
+
+    const preguntaRespondidaId = respuesta.id_pregunta;
+
+    const preguntas = await Pregunta.findAll({
+      where: { id_nivel },
+      order: [['id', 'ASC']]
+    });
+
+    const idsPreguntas = preguntas.map(p => p.id);
+    const esUltimaPregunta = preguntaRespondidaId === idsPreguntas[idsPreguntas.length - 1];
+
+    const esCorrecta = respuesta.correcta === true;
+    let nivelCompletado = false;
+    let experienciaGanada = 0;
+    let reiniciado = false;
+
+    if (esCorrecta) {
+      progreso.aciertos += 1;
+    } else {
+      usuario.vidas -= 1;
+      progreso.error +=1;
+
+      if (usuario.vidas <= 0) {
+        usuario.vidas = 3;
+        progreso.aciertos = 0;
+        progreso.completado = false;
+        reiniciado = true;
+
+        await usuario.save();
+        await progreso.save();
+
+        return res.status(200).json({
+          correcta: false,
+          vidasRestantes: usuario.vidas,
+          reiniciado: true,
+          nivelCompletado: false,
+          message: "Te quedaste sin vidas, se reinició el cuestionario."
+        });
       }
+    }
 
-      // Verificar si es correcta
-      const esCorrecta = respuesta.correcta === true;
-      let nivelCompletado = false;
-      let experienciaGanada = 0;
-      let reiniciado = false;
-
-      if (esCorrecta) {
-        progreso.aciertos += 1;
-      } else {
-        usuario.vidas -= 1;
-
-        if (usuario.vidas <= 0) {
-          usuario.vidas = 3;
-          progreso.aciertos = 0;
-          progreso.completado = false;
-          experienciaGanada= 0;
-          reiniciado = true;
-
-          await usuario.save();
-          await progreso.save();
-
-          return res.status(200).json({
-            correcta: false,
-            vidasRestantes: usuario.vidas,
-            reiniciado: true,
-            nivelCompletado: false,
-            message: "Te quedaste sin vidas, se reinició el cuestionario."
-          });
-        }
-      }
-
-      // Obtener cantidad total de preguntas en el nivel
-      const preguntas = await Pregunta.findAll({ where: { id_nivel } });
-
-      // Si esta fue la última pregunta:
-      if (parseInt(preguntaActual, 10) + 1 > preguntas.length) {
+    if (esUltimaPregunta) {
+      // Si aún no estaba completado, se puede actualizar experiencia
+      if (!progreso.completado) {
         progreso.completado = true;
         experienciaGanada = progreso.aciertos * 20;
         usuario.experiencia += experienciaGanada;
-        usuario.vidas = 3;
+
+        // Subir de nivel si llega a 100 o más
+        while (usuario.experiencia >= 100) {
+          usuario.experiencia -= 100;
+          usuario.nivel_experiencia += 1;
+        }
+
         nivelCompletado = true;
       }
-
-      // Guardar cambios
-      await usuario.save();
-      await progreso.save();
-
-      return res.status(200).json({
-        correcta: esCorrecta,
-        vidasRestantes: usuario.vidas,
-        aciertos: progreso.aciertos,
-        experiencia: usuario.experiencia,
-        nivelCompletado,
-        experienciaGanada,
-        reiniciado
-      });
-
-    } catch (error) {
-      console.error("Error al procesar respuesta:", error);
-      return res.status(500).json({ message: "Error al responder", error: error.message });
     }
+
+    await usuario.save();
+    await progreso.save();
+
+    return res.status(200).json({
+      correcta: esCorrecta,
+      vidasRestantes: usuario.vidas,
+      aciertos: progreso.aciertos,
+      experiencia: usuario.experiencia,
+      nivelCompletado,
+      experienciaGanada,
+      reiniciado
+    });
+
+  } catch (error) {
+    console.error("Error al procesar respuesta:", error);
+    return res.status(500).json({ message: "Error al responder", error: error.message });
   }
+}
 }
