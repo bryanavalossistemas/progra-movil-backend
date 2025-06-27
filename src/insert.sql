@@ -1,4 +1,7 @@
 -- Inserts para la tabla 'modulos' con descripciones
+INSERT INTO Genero (id, nombre) VALUES (1, 'Masculino');
+INSERT INTO Genero (id, nombre) VALUES (2, 'Femenino');
+
 INSERT INTO modulos (id, nombre, descripcion) 
 VALUES (1, 'Aritmética', 'Estudio de las operaciones básicas con números.');
 
@@ -203,15 +206,32 @@ INSERT INTO usuario (id, usuario, correo, contrasenia, edad, vidas, experiencia,
 INSERT INTO tipos (id, nombre) VALUES (1, 'medalla');
 INSERT INTO tipos (id, nombre) VALUES (2, 'logro');
 
+INSERT INTO Insignias (id, nombre, imagen, descripcion, id_tipo) VALUES
+(1, 'Suma completada', 'insignias/medalla1.png', 'Completaste un nivel de sumas.', 1),
+(2, 'Resta completada', 'insignias/medalla2.png', 'Completaste un nivel de restas.', 1),
+(3, 'Multiplicación completada', 'insignias/medalla3.png', 'Completaste un nivel de multiplicaciones.', 1),
+(4, 'División completada', 'insignias/medalla4.png', 'Completaste un nivel de divisiones.', 1),
+(5, 'Área de figura completada', 'insignias/medalla5.png', 'Completaste un nivel de áreas de figuras.', 1),
+(6, 'Primer nivel completado', 'insignias/logro1.png', 'Completaste tu primer nivel con éxito.', 2),
+(7, 'Nivel sin errores', 'insignias/logro2.png', 'Completaste un nivel sin errores.', 2),
+(8, 'Persistente', 'insignias/logro3.png', 'Completaste todos los niveles de la sección.', 2);
 
+-- Usuario 1 en nivel 1: Completado sin errores en poco tiempo (debería ganar insignias 6, 7 y 8)
+INSERT INTO usuario_progresos (id_usuario, id_nivel, completado, intentos, aciertos, errores, tiempo)
+VALUES (1, 2, 1, 1, 5, 0, 45);
 
+-- Usuario 2 en nivel 1: Completado con errores (solo podría ganar la 6 si completó)
+INSERT INTO usuario_progresos (id_usuario, id_nivel, completado, intentos, aciertos, errores, tiempo)
+VALUES (1, 2, 1, 2, 5, 2, 80);
 
-INSERT INTO Insignias (nombre, imagen, descripcion, id_tipo) VALUES
-('Explorador', 'https://miapp.com/img/explorador.png', 'Completó el primer módulo', 1),
-('Velocista', 'https://miapp.com/img/velocista.png', 'Respondió todas las preguntas en tiempo récord', 2),
-('Conquistador', 'https://miapp.com/img/conquistador.png', 'Terminó todos los niveles del curso', 1),
-('Maestro', 'https://miapp.com/img/maestro.png', 'Obtuvo el 100% de respuestas correctas', 2);
+-- Usuario 3 en nivel 1: No completó el nivel (no gana nada)
+INSERT INTO usuario_progresos (id_usuario, id_nivel, completado, intentos, aciertos, errores, tiempo)
+VALUES (1, 2, 1, 1, 2, 3, 100);
 
+-- Usuario 4 en nivel 2: Completado sin errores pero lento (gana 6 y 7)
+INSERT INTO usuario_progresos (id_usuario, id_nivel, completado, intentos, aciertos, errores, tiempo)
+VALUES (1, 2, 1, 1, 6, 0, 75);
 
-INSERT INTO usuario_insignia (fecha_logro, id_usuario, id_insignia)
-VALUES (CURRENT_DATE, 1, 1);
+-- Usuario 5 en nivel 3: Completado en tiempo récord pero con errores (solo gana 6)
+INSERT INTO usuario_progresos (id_usuario, id_nivel, completado, intentos, aciertos, errores, tiempo)
+VALUES (1, 2, 1, 1, 6, 1, 30);

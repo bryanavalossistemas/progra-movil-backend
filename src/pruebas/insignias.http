@@ -1,1 +1,26 @@
-GET http://localhost:4000/api/insignias/usuario/1
+### Obtener todas las insignias
+GET http://localhost:4000/api/insignias
+
+### Medalla 1: Suma completada
+GET http://localhost:4000/api/insignias/verificar/1/usuario/1
+
+### Medalla 2: Resta completada
+GET http://localhost:4000/api/insignias/verificar/2/usuario/1
+
+### Medalla 3: Multiplicación completada
+GET http://localhost:4000/api/insignias/verificar/3/usuario/1
+
+### Medalla 4: División completada
+GET http://localhost:4000/api/insignias/verificar/4/usuario/1
+
+### Medalla 5: Área de figura completada
+GET http://localhost:4000/api/insignias/verificar/5/usuario/1
+
+### Logro 1: Primer nivel completado
+GET http://localhost:4000/api/insignias/verificar/6/usuario/1
+
+### Logro 2: Nivel completado sin errores
+GET http://localhost:4000/api/insignias/verificar/7/usuario/1/nivel/1
+
+### Logro 3: Experiencia mínima alcanzada (200 XP)
+GET http://localhost:4000/api/insignias/verificar/8/usuario/1/nivel/1
