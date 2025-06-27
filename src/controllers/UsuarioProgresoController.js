@@ -6,7 +6,7 @@ import { Pregunta } from "../models/Pregunta.js";
 export class UsuarioProgresoController {
     static async obtenerProgresoPorUsuarioYNivel(req, res) {
     try {
-      const { id_usuario, id_nivel } = req.params;
+      const { id_usuario, id_nivel } = req.body;
 
       const progreso = await UsuarioProgreso.findOne({
         where: { id_usuario, id_nivel }

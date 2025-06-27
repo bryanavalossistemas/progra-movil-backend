@@ -1,0 +1,16 @@
+GET http://localhost:4000/api/progreso/
+Content-Type: application/json
+
+{
+  "id_usuario": 1,
+  "id_nivel": 2
+}
+
+
+#####
+
+POST http://localhost:4000/api/progreso/1/4
+
+
+####
+
