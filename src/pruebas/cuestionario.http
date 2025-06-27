@@ -1,8 +1,8 @@
 GET http://localhost:4000/api/cuestionarios/1
-#######
+####### obtener cuestionario nivel 1
 
 GET http://localhost:4000/api/cuestionarios/2
-#######
+####### obtener cuestionario nivel 1
 
 
 POST http://localhost:4000/api/cuestionarios/responder

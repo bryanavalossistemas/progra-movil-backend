@@ -7,10 +7,10 @@ Content-Type: application/json
 }
 
 
-#####
+#####obtener progreso del usuario
 
 POST http://localhost:4000/api/progreso/1/4
 
 
-####
+#### Crear progreso
 

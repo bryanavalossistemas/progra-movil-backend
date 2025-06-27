@@ -1,6 +1,6 @@
 GET http://localhost:4000/api/secciones/
-#######
+#######obtener secciones
 
 
 GET http://localhost:4000/api/secciones/1
-#######
+####### obtener secciones de un modulo

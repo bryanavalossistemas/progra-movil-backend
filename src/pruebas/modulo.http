@@ -1,5 +1,5 @@
 GET http://localhost:4000/api/modulos/
-#######
+####### obtener modulos
 
 GET http://localhost:4000/api/modulos/1
-#######
+####### obtener estructura completa

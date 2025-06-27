@@ -35,7 +35,7 @@ export class NivelesController {
     });
 
     return res.status(200).json({
-      message: "Secciones del módulo encontradas correctamente",
+      message: "Niveles de la sección encontradas correctamente",
       data: NivelesPorSeccion,
     });
 

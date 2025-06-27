@@ -1,7 +1,5 @@
 import {UsuarioProgreso} from "../models/Usuario_Progreso.js";
-import {Usuario} from "../models/Usuario.js";
-import {Respuesta} from "../models/Respuesta.js";
-import { Pregunta } from "../models/Pregunta.js";
+
 
 export class UsuarioProgresoController {
     static async obtenerProgresoPorUsuarioYNivel(req, res) {
