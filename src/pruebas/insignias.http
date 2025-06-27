@@ -1,6 +1,10 @@
 ### Obtener todas las insignias
 GET http://localhost:4000/api/insignias
 
+
+##### obtener insignias por usuario
+GET http://localhost:4000/api/insignias/usuario/1
+
 ### Medalla 1: Suma completada
 GET http://localhost:4000/api/insignias/verificar/1/usuario/1
 

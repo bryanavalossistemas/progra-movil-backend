@@ -19,3 +19,6 @@ insigniaRoutes.get("/verificar/5/usuario/:idusuario", InsigniasController.verifi
 insigniaRoutes.get("/verificar/6/usuario/:idusuario", InsigniasController.verificarInsignia6);
 insigniaRoutes.get("/verificar/7/usuario/:idusuario/nivel/:idnivel", InsigniasController.verificarInsignia7);
 insigniaRoutes.get("/verificar/8/usuario/:idusuario/nivel/:idnivel", InsigniasController.verificarInsignia8);
+
+insigniaRoutes.get("/usuario/:id", InsigniasController.verInsignias);
+insigniaRoutes.delete("/usuario/:id", InsigniasController.verInsignias);
