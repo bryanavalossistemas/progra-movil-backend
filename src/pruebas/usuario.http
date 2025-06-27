@@ -2,7 +2,7 @@ POST http://localhost:4000/api/usuarios/crear-cuenta
 Content-Type: application/json
 
 {
-    "usuario": "usuario",
+    "usuario": "usuario3",
     "correo": "correo@correo.com",
     "contrasenia": "password",
     "edad": 22,
@@ -16,7 +16,53 @@ Content-Type: application/json
 
 {
     "usuario": "usuario",
-    "contrasenia": "password2"
+    "contrasenia": "password"
 }
 
 ###
+
+
+POST http://localhost:4000/api/usuarios/olvide-contrasenia
+Content-Type: application/json
+
+{
+  "correo": "ejemplo@mail.com"
+}
+
+
+####
+
+POST http://localhost:4000/api/usuarios/actualizar-contrasenia-con-token
+Content-Type: application/json
+
+{
+  "token": "ABC123",
+  "nuevaContrasenia": "nuevaClave123"
+
+}
+
+
+#####
+GET http://localhost:4000/api/usuarios/
+
+####
+
+GET http://localhost:4000/api/usuarios/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OSwiaWF0IjoxNzUxMDMwMDU0LCJleHAiOjE3NjY1ODIwNTR9.7aT1m7Slg5fwymN7navN5tjD3L1B3uJ4WDFC6OaB1z0
+
+#####
+
+PUT http://localhost:4000/api/usuarios/actualizar-usuario
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OSwiaWF0IjoxNzUxMDMwMDU0LCJleHAiOjE3NjY1ODIwNTR9.7aT1m7Slg5fwymN7navN5tjD3L1B3uJ4WDFC6OaB1z0
+Content-Type: application/json
+
+{
+  "usuario": "nuevoUsuario",
+  "correo": "nuevoCorreo@mail.com",
+  "contrasenia": "nuevaClave123",
+  "edad": 20,
+  "generoId": 2
+}
+
+
+
