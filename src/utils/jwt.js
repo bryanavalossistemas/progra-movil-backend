@@ -1,6 +1,6 @@
 import jwt from "jsonwebtoken";
 
-export function generateJWT(payload) {
+export function generarJWT(payload) {
   const token = jwt.sign(payload, "palabrasupersecreta", {
     expiresIn: "180d",
   });

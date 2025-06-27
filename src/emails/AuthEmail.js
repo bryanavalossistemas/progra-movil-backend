@@ -21,17 +21,15 @@ export class AuthEmail {
     }
   }
 
-  static async sendPasswordResetToken(user) {
+  static async enviarTokenDeRecuperacion(usuario) {
     try {
       await transporter.sendMail({
-        from: "Corporación Loa y pardo <admin@corporacionloaypardo.com>",
-        to: user.correo,
-        subject: "Corporación Loa y pardo - Reestablece tu password",
+        from: "Math App <admin@mathapp.com>",
+        to: usuario.correo,
+        subject: "Math App - Token de recuperación",
         text: "Corporación Loa y pardo - Reestablece tu password",
-        html: `<p>Hola: ${user.name}, has solicitado reestablecer tu password.</p>
-            <p>Visita el siguiente enlace:</p>
-            <a href="https://ulima-shop-frontend.vercel.app/auth/new-password">Reestablecer Password</a>
-            <p>E ingresa el código: <b>${user.token}</b></p>
+        html: `<p>Hola: ${usuario.usuario}, has solicitado reestablecer tu password.</p>
+            <p>E ingresa el código: <b>${usuario.token}</b></p>
             <p>Este token expira en 10 minutos</p>
         `,
       });

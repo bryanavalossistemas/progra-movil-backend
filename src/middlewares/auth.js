@@ -15,11 +15,13 @@ export const authenticate = async (req, res, next) => {
       if (!user) {
         throw Error;
       }
-      req.user = user;
+      req.usuario = user;
       next();
     }
   } catch (error) {
-    return res.sendStatus(500);
+    return res.status(500).json({
+      error: "No autenticado",
+    });
   }
 };
 

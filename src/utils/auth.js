@@ -1,6 +1,6 @@
 import bcrypt from "bcrypt";
 
-export async function hashPassword(password) {
+export async function hashearContrasenia(password) {
   try {
     const salt = await bcrypt.genSalt(10);
     return await bcrypt.hash(password, salt);
@@ -10,7 +10,7 @@ export async function hashPassword(password) {
   }
 }
 
-export async function checkPassword(enteredPassword, storedHash) {
+export async function compararContrasenias(enteredPassword, storedHash) {
   try {
     return await bcrypt.compare(enteredPassword, storedHash);
   } catch (error) {

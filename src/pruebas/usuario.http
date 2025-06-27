@@ -1,0 +1,22 @@
+POST http://localhost:4000/api/usuarios/crear-cuenta
+Content-Type: application/json
+
+{
+    "usuario": "usuario",
+    "correo": "correo@correo.com",
+    "contrasenia": "password",
+    "edad": 22,
+    "generoId": 1
+}
+
+###
+
+POST http://localhost:4000/api/usuarios/login
+Content-Type: application/json
+
+{
+    "usuario": "usuario",
+    "contrasenia": "password2"
+}
+
+###
