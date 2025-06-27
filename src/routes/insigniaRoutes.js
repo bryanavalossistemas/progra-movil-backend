@@ -7,8 +7,8 @@ export const insigniaRoutes = Router();
 insigniaRoutes.post("/", InsigniasController.crearInsignia);
 insigniaRoutes.get("/", InsigniasController.obtenerInsignias);
 insigniaRoutes.get("/:id", InsigniasController.obtenerInsigniaPorId);
+insigniaRoutes.get("/usuario/:id", InsigniasController.verInsignias);
+insigniaRoutes.delete("/usuario/:id", InsigniasController.verInsignias);
 insigniaRoutes.put("/:id", InsigniasController.actualizarInsignia);
-insigniaRoutes.delete("/:id", InsigniasController.eliminarInsignia);
-
 // Ruta de evaluación de insignias (sin autenticación por ahora)
 insigniaRoutes.post("/evaluar", InsigniasController.evaluar);

@@ -202,3 +202,16 @@ INSERT INTO usuario (id, usuario, correo, contrasenia, edad, vidas, experiencia,
 
 INSERT INTO tipos (id, nombre) VALUES (1, 'medalla');
 INSERT INTO tipos (id, nombre) VALUES (2, 'logro');
+
+
+
+
+INSERT INTO Insignias (nombre, imagen, descripcion, id_tipo) VALUES
+('Explorador', 'https://miapp.com/img/explorador.png', 'Completó el primer módulo', 1),
+('Velocista', 'https://miapp.com/img/velocista.png', 'Respondió todas las preguntas en tiempo récord', 2),
+('Conquistador', 'https://miapp.com/img/conquistador.png', 'Terminó todos los niveles del curso', 1),
+('Maestro', 'https://miapp.com/img/maestro.png', 'Obtuvo el 100% de respuestas correctas', 2);
+
+
+INSERT INTO usuario_insignia (fecha_logro, id_usuario, id_insignia)
+VALUES (CURRENT_DATE, 1, 1);

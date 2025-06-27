@@ -32,5 +32,4 @@ app.use("/api/secciones", seccionesRoutes);
 app.use("/api/niveles", nivelesRoutes);
 app.use("/api/cuestionarios", cuestionarioRoutes);
 app.use('/api/progreso', usuarioProgresoRoutes);
-
 export default app;
