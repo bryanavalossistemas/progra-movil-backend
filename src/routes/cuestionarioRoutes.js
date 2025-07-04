@@ -6,3 +6,4 @@ export const cuestionarioRoutes = Router();
 
 cuestionarioRoutes.get("/:id_nivel", CuestionarioController.obtenerCuestionarioPorNivel);
 cuestionarioRoutes.post("/responder", CuestionarioController.responderPregunta);
+cuestionarioRoutes.post('/reiniciar', CuestionarioController.reiniciarCuestionario);

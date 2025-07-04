@@ -10,6 +10,7 @@ import { seccionesRoutes } from "./routes/seccionesRoutes.js";
 import { nivelesRoutes } from "./routes/nivelesRoutes.js";
 import { cuestionarioRoutes } from "./routes/cuestionarioRoutes.js";
 import { usuarioProgresoRoutes } from "./routes/usuarioprogresoRoutes.js";
+import { InsigniaNivelRoutes } from "./routes/InsigniaNivelRoutes.js";
 
 
 // Conectarse a la base de datos
@@ -32,4 +33,5 @@ app.use("/api/secciones", seccionesRoutes);
 app.use("/api/niveles", nivelesRoutes);
 app.use("/api/cuestionarios", cuestionarioRoutes);
 app.use('/api/progreso', usuarioProgresoRoutes);
+app.use('/api/asignar', InsigniaNivelRoutes)
 export default app;

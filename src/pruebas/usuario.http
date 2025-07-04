@@ -2,9 +2,9 @@ POST http://localhost:4000/api/usuarios/crear-cuenta
 Content-Type: application/json
 
 {
-    "usuario": "usuario3",
-    "correo": "correo@correo.com",
-    "contrasenia": "password",
+    "usuario": "xd",
+    "correo": "xd@gmail.com",
+    "contrasenia": "1234",
     "edad": 22,
     "generoId": 1
 }
@@ -15,8 +15,8 @@ POST http://localhost:4000/api/usuarios/login
 Content-Type: application/json
 
 {
-    "usuario": "usuario",
-    "contrasenia": "password"
+    "usuario": "rasecml",
+    "contrasenia": "1234"
 }
 
 ###
@@ -47,9 +47,8 @@ GET http://localhost:4000/api/usuarios/
 
 ####
 
-GET http://localhost:4000/api/usuarios/1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OSwiaWF0IjoxNzUxMDMwMDU0LCJleHAiOjE3NjY1ODIwNTR9.7aT1m7Slg5fwymN7navN5tjD3L1B3uJ4WDFC6OaB1z0
-
+GET http://localhost:4000/api/usuarios/12
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIsImlhdCI6MTc1MTUxNDg4MywiZXhwIjoxNzY3MDY2ODgzfQ.3OLvPDRnuFa2ZhIQXWiQ3ANU4pZ8qvsGnXgr7ZL_N0M
 #####
 
 PUT http://localhost:4000/api/usuarios/actualizar-usuario
@@ -63,6 +62,7 @@ Content-Type: application/json
   "edad": 20,
   "generoId": 2
 }
+
 
 
 

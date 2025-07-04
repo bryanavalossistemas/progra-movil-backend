@@ -81,7 +81,7 @@ export class CuestionarioController {
     let experienciaGanada = 0;
     let reiniciado = false;
 
-    if (esCorrecta) {
+    if (esCorrecta ) {
       progreso.aciertos += 1;
     } else {
       usuario.vidas -= 1;
@@ -90,7 +90,6 @@ export class CuestionarioController {
       if (usuario.vidas <= 0) {
         usuario.vidas = 3;
         progreso.aciertos = 0;
-        progreso.completado = false;
         reiniciado = true;
 
         await usuario.save();
@@ -107,19 +106,23 @@ export class CuestionarioController {
     }
 
     if (esUltimaPregunta) {
-      // Si aún no estaba completado, se puede actualizar experiencia
+      
       if (!progreso.completado) {
+        usuario.vidas=3;
         progreso.completado = true;
         experienciaGanada = progreso.aciertos * 20;
         usuario.experiencia += experienciaGanada;
 
-        // Subir de nivel si llega a 100 o más
+      
         while (usuario.experiencia >= 100) {
           usuario.experiencia -= 100;
           usuario.nivel_experiencia += 1;
         }
 
         nivelCompletado = true;
+      }else{
+        nivelCompletado = true
+        usuario.vidas= 3;
       }
     }
 
@@ -141,4 +144,42 @@ export class CuestionarioController {
     return res.status(500).json({ message: "Error al responder", error: error.message });
   }
 }
+
+static async reiniciarCuestionario(req, res) {
+  try {
+    const { id_usuario, id_nivel } = req.body;
+
+    const usuario = await Usuario.findByPk(id_usuario);
+    const progreso = await UsuarioProgreso.findOne({
+      where: { id_usuario, id_nivel }
+    });
+
+    if (!usuario || !progreso) {
+      return res.status(404).json({ message: "Usuario o progreso no encontrados" });
+    }
+
+    // Reiniciar datos
+    usuario.vidas = 3;
+    await usuario.save();
+
+    progreso.aciertos = 0;
+    progreso.error = 0;
+
+    await progreso.save();
+
+    return res.status(200).json({
+      message: "Progreso reiniciado correctamente",
+      vidas: usuario.vidas,
+      aciertos: progreso.aciertos
+    });
+
+  } catch (error) {
+    console.error("Error al reiniciar cuestionario:", error);
+    return res.status(500).json({
+      message: "Error al reiniciar cuestionario",
+      error: error.message
+    });
+  }
+}
+
 }

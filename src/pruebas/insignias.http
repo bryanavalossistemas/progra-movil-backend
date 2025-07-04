@@ -3,7 +3,7 @@ GET http://localhost:4000/api/insignias
 
 
 ##### obtener insignias por usuario
-GET http://localhost:4000/api/insignias/usuario/1
+GET http://localhost:4000/api/insignias/usuario/12
 
 ### Medalla 1: Suma completada
 GET http://localhost:4000/api/insignias/verificar/1/usuario/1
@@ -28,3 +28,9 @@ GET http://localhost:4000/api/insignias/verificar/7/usuario/1/nivel/1
 
 ### Logro 3: Experiencia mínima alcanzada (200 XP)
 GET http://localhost:4000/api/insignias/verificar/8/usuario/1/nivel/1
+
+
+
+### Obtener insignia por nivel si el usuario completó el nivel
+GET http://localhost:4000/api/asignar/12/1
+Accept: application/json

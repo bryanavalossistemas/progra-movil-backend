@@ -17,3 +17,4 @@ usuarioRoutes.get("/", UsuarioController.obtenerTodosLosUsuarios);
 usuarioRoutes.get("/:id", authenticate, UsuarioController.obtenerUsuario);
 
 usuarioRoutes.put("/actualizar-usuario", authenticate, UsuarioController.actualizarUsuario);
+

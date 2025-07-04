@@ -144,6 +144,25 @@ INSERT INTO preguntas (id, pregunta, id_nivel) VALUES (8, '¿Cuánto es 6 + 19?'
 INSERT INTO preguntas (id, pregunta, id_nivel) VALUES (9, '¿Cuánto es 13 + 10?', 2);
 INSERT INTO preguntas (id, pregunta, id_nivel) VALUES (10, '¿Cuánto es 11 + 6?', 2);
 
+INSERT INTO preguntas (id, pregunta, id_nivel) VALUES (11, '¿Cuánto es 4 + 18?', 3);
+INSERT INTO preguntas (id, pregunta, id_nivel) VALUES (12, '¿Cuánto es 2 + 9?', 3);
+INSERT INTO preguntas (id, pregunta, id_nivel) VALUES (13, '¿Cuánto es 8 + 15?', 3);
+INSERT INTO preguntas (id, pregunta, id_nivel) VALUES (14, '¿Cuánto es 17 + 3?', 3);
+INSERT INTO preguntas (id, pregunta, id_nivel) VALUES (15, '¿Cuánto es 6 + 12?', 3);
+
+-- Preguntas para nivel 4
+INSERT INTO preguntas (id, pregunta, id_nivel) VALUES (16, '¿Cuánto es 10 + 10?', 4);
+INSERT INTO preguntas (id, pregunta, id_nivel) VALUES (17, '¿Cuánto es 7 + 14?', 4);
+INSERT INTO preguntas (id, pregunta, id_nivel) VALUES (18, '¿Cuánto es 11 + 11?', 4);
+INSERT INTO preguntas (id, pregunta, id_nivel) VALUES (19, '¿Cuánto es 9 + 5?', 4);
+INSERT INTO preguntas (id, pregunta, id_nivel) VALUES (20, '¿Cuánto es 14 + 6?', 4);
+
+-- Preguntas para nivel 5
+INSERT INTO preguntas (id, pregunta, id_nivel) VALUES (21, '¿Cuánto es 3 + 13?', 5);
+INSERT INTO preguntas (id, pregunta, id_nivel) VALUES (22, '¿Cuánto es 15 + 4?', 5);
+INSERT INTO preguntas (id, pregunta, id_nivel) VALUES (23, '¿Cuánto es 10 + 8?', 5);
+INSERT INTO preguntas(id, pregunta, id_nivel) VALUES (24, '¿Cuánto es 13 + 2?', 5);
+INSERT INTO preguntas (id, pregunta, id_nivel) VALUES (25, '¿Cuánto es 19 + 1?', 5);
 
 INSERT INTO respuestas (id, respuesta, correcta, id_pregunta) VALUES (1, '19', false, 1);
 INSERT INTO respuestas (id, respuesta, correcta, id_pregunta) VALUES (2, '24', false, 1);
@@ -195,6 +214,80 @@ INSERT INTO respuestas (id, respuesta, correcta, id_pregunta) VALUES (38, '15', 
 INSERT INTO respuestas (id, respuesta, correcta, id_pregunta) VALUES (39, '20', false, 10);
 INSERT INTO respuestas (id, respuesta, correcta, id_pregunta) VALUES (40, '19', false, 10);
 
+INSERT INTO respuestas (id, respuesta, correcta, id_pregunta) VALUES (41, '5', 0, 11);
+INSERT INTO respuestas (id, respuesta, correcta, id_pregunta) VALUES (42, '10', 0, 11);
+INSERT INTO respuestas (id, respuesta, correcta, id_pregunta) VALUES (43, '7', 1, 11);
+INSERT INTO respuestas (id, respuesta, correcta, id_pregunta) VALUES (44, '8', 0, 11);
+
+INSERT INTO respuestas (id, respuesta, correcta, id_pregunta) VALUES (45, '15', 0, 12);
+INSERT INTO respuestas (id, respuesta, correcta, id_pregunta) VALUES (46, '21', 0, 12);
+INSERT INTO respuestas (id, respuesta, correcta, id_pregunta) VALUES (47, '18', 1, 12);
+INSERT INTO respuestas (id, respuesta, correcta, id_pregunta) VALUES (48, '16', 0, 12);
+
+INSERT INTO respuestas (id, respuesta, correcta, id_pregunta) VALUES (49, '25', 0, 13);
+INSERT INTO respuestas (id, respuesta, correcta, id_pregunta) VALUES (50, '19', 0, 13);
+INSERT INTO respuestas (id, respuesta, correcta, id_pregunta) VALUES (51, '20', 0, 13);
+INSERT INTO respuestas (id, respuesta, correcta, id_pregunta) VALUES (52, '22', 1, 13);
+
+INSERT INTO respuestas (id, respuesta, correcta, id_pregunta) VALUES (53, '29', 0, 14);
+INSERT INTO respuestas (id, respuesta, correcta, id_pregunta) VALUES (54, '30', 0, 14);
+INSERT INTO respuestas (id, respuesta, correcta, id_pregunta) VALUES (55, '27', 1, 14);
+INSERT INTO respuestas (id, respuesta, correcta, id_pregunta) VALUES (56, '25', 0, 14);
+
+INSERT INTO respuestas (id, respuesta, correcta, id_pregunta) VALUES (57, '23', 1, 15);
+INSERT INTO respuestas (id, respuesta, correcta, id_pregunta) VALUES (58, '26', 0, 15);
+INSERT INTO respuestas (id, respuesta, correcta, id_pregunta) VALUES (59, '22', 0, 15);
+INSERT INTO respuestas (id, respuesta, correcta, id_pregunta) VALUES (60, '25', 0, 15);
+
+INSERT INTO respuestas (id, respuesta, correcta, id_pregunta) VALUES (61, '16', 0, 16);
+INSERT INTO respuestas (id, respuesta, correcta, id_pregunta) VALUES (62, '15', 1, 16);
+INSERT INTO respuestas (id, respuesta, correcta, id_pregunta) VALUES (63, '17', 0, 16);
+INSERT INTO respuestas (id, respuesta, correcta, id_pregunta) VALUES (64, '18', 0, 16);
+
+INSERT INTO respuestas (id, respuesta, correcta, id_pregunta) VALUES (65, '22', 1, 17);
+INSERT INTO respuestas (id, respuesta, correcta, id_pregunta) VALUES (66, '20', 0, 17);
+INSERT INTO respuestas (id, respuesta, correcta, id_pregunta) VALUES (67, '21', 0, 17);
+INSERT INTO respuestas (id, respuesta, correcta, id_pregunta) VALUES (68, '23', 0, 17);
+
+INSERT INTO respuestas (id, respuesta, correcta, id_pregunta) VALUES (69, '25', 1, 18);
+INSERT INTO respuestas (id, respuesta, correcta, id_pregunta) VALUES (70, '28', 0, 18);
+INSERT INTO respuestas (id, respuesta, correcta, id_pregunta) VALUES (71, '26', 0, 18);
+INSERT INTO respuestas (id, respuesta, correcta, id_pregunta) VALUES (72, '23', 0, 18);
+
+INSERT INTO respuestas (id, respuesta, correcta, id_pregunta) VALUES (73, '21', 1, 19);
+INSERT INTO respuestas (id, respuesta, correcta, id_pregunta) VALUES (74, '24', 0, 19);
+INSERT INTO respuestas (id, respuesta, correcta, id_pregunta) VALUES (75, '20', 0, 19);
+INSERT INTO respuestas (id, respuesta, correcta, id_pregunta) VALUES (76, '18', 0, 19);
+
+INSERT INTO respuestas (id, respuesta, correcta, id_pregunta) VALUES (77, '16', 0, 20);
+INSERT INTO respuestas (id, respuesta, correcta, id_pregunta) VALUES (78, '21', 0, 20);
+INSERT INTO respuestas (id, respuesta, correcta, id_pregunta) VALUES (79, '22', 0, 20);
+INSERT INTO respuestas (id, respuesta, correcta, id_pregunta) VALUES (80, '19', 1, 20);
+
+INSERT INTO respuestas (id, respuesta, correcta, id_pregunta) VALUES (81, '12', 0, 21);
+INSERT INTO respuestas (id, respuesta, correcta, id_pregunta) VALUES (82, '7', 0, 21);
+INSERT INTO respuestas (id, respuesta, correcta, id_pregunta) VALUES (83, '13', 0, 21);
+INSERT INTO respuestas (id, respuesta, correcta, id_pregunta) VALUES (84, '10', 1, 21);
+
+INSERT INTO respuestas (id, respuesta, correcta, id_pregunta) VALUES (85, '24', 1, 22);
+INSERT INTO respuestas (id, respuesta, correcta, id_pregunta) VALUES (86, '27', 0, 22);
+INSERT INTO respuestas (id, respuesta, correcta, id_pregunta) VALUES (87, '23', 0, 22);
+INSERT INTO respuestas (id, respuesta, correcta, id_pregunta) VALUES (88, '25', 0, 22);
+
+INSERT INTO respuestas (id, respuesta, correcta, id_pregunta) VALUES (89, '23', 0, 23);
+INSERT INTO respuestas (id, respuesta, correcta, id_pregunta) VALUES (90, '22', 0, 23);
+INSERT INTO respuestas (id, respuesta, correcta, id_pregunta) VALUES (91, '20', 1, 23);
+INSERT INTO respuestas (id, respuesta, correcta, id_pregunta) VALUES (92, '18', 0, 23);
+
+INSERT INTO respuestas (id, respuesta, correcta, id_pregunta) VALUES (93, '8', 0, 24);
+INSERT INTO respuestas (id, respuesta, correcta, id_pregunta) VALUES (94, '9', 0, 24);
+INSERT INTO respuestas (id, respuesta, correcta, id_pregunta) VALUES (95, '6', 1, 24);
+INSERT INTO respuestas (id, respuesta, correcta, id_pregunta) VALUES (96, '7', 0, 24);
+
+INSERT INTO respuestas (id, respuesta, correcta, id_pregunta) VALUES (97, '12', 0, 25);
+INSERT INTO respuestas (id, respuesta, correcta, id_pregunta) VALUES (98, '10', 1, 25);
+INSERT INTO respuestas (id, respuesta, correcta, id_pregunta) VALUES (99, '13', 0, 25);
+INSERT INTO respuestas (id, respuesta, correcta, id_pregunta) VALUES (100, '7', 0, 25);
 
 INSERT INTO usuario (id, usuario, correo, contrasenia, edad, vidas, experiencia, nivel_experiencia, confirmed, id_genero) VALUES
 (1, 'rasecml', 'rasec@gmail.com', '1234', 21, 3, 0, 1, 0, 1),
@@ -235,3 +328,10 @@ VALUES (1, 2, 1, 1, 6, 0, 75);
 -- Usuario 5 en nivel 3: Completado en tiempo récord pero con errores (solo gana 6)
 INSERT INTO usuario_progresos (id_usuario, id_nivel, completado, intentos, aciertos, errores, tiempo)
 VALUES (1, 2, 1, 1, 6, 1, 30);
+
+
+INSERT INTO Insignia_niveles (id_nivel, id_insignia) VALUES
+(1, 1),  -- Nivel 1 → Insignia 1
+(2, 2),  -- Nivel 2 → Insignia 2
+(3, 3),  -- Nivel 3 → Insignia 3
+(4, 4);  -- Nivel 4 → Insignia 4

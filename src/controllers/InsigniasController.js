@@ -119,16 +119,16 @@ export class InsigniasController {
   }
 
 
-   static async verInsignias(req, res) {
+static async verInsignias(req, res) {
   try {
-    const { idusuario } = req.params;
+    const idusuario = req.params.id;
 
     const insignias = await UsuarioInsignia.findAll({
       where: { id_usuario: idusuario },
       include: {
         model: Insignia,
-        as: 'Insignia', // <-- Aquí agregas el alias
-        attributes: ['id', 'nombre', 'descripcion']
+        as: 'insignia',
+        attributes: ['id', 'nombre', 'descripcion', 'imagen', 'id_tipo']
       }
     });
 
@@ -136,7 +136,7 @@ export class InsigniasController {
       return res.status(200).json({ mensaje: 'El usuario no tiene insignias' });
     }
 
-    const resultado = insignias.map(i => i.Insignia);
+    const resultado = insignias.map(i => i.insignia); // alias en minúscula
 
     return res.status(200).json(resultado);
   } catch (error) {
@@ -144,24 +144,7 @@ export class InsigniasController {
     return res.status(500).json({ mensaje: 'Error del servidor' });
   }
 }
-static async verInsignias(req, res) {
-  try {
-    const insignias = await UsuarioInsignia.findAll({
-      where: { id_usuario: req.params.id },
-      include: [
-        {
-          model: Insignia,
-          as: "insignia", // Usa el alias definido en la asociación
-        },
-      ],
-    });
 
-    res.status(200).json(insignias);
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ mensaje: "Error al obtener insignias", error });
-  }
-}
 
 
   

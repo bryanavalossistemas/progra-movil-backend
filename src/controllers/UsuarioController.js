@@ -41,30 +41,40 @@ export class UsuarioController {
   }
 
   static async login(req, res) {
-    try {
-      const { usuario, contrasenia } = req.body;
+  try {
+    const { usuario, contrasenia } = req.body;
 
-      if (!usuario || !contrasenia) {
-        throw Error;
-      }
-
-      const usuarioEcontrado = await Usuario.findOne({ where: { usuario } });
-      if (!usuarioEcontrado) {
-        return res.status(404).json("Usuario no encontrado");
-      }
-
-      const contraseniaCorrecta = await compararContrasenias(contrasenia, usuarioEcontrado.contrasenia);
-      if (!contraseniaCorrecta) {
-        return res.status(400).json("Contraseña incorrecta");
-      }
-
-      const token = generarJWT({ id: usuarioEcontrado.id });
-
-      return res.status(200).json({ token: token });
-    } catch (error) {
-      return res.sendStatus(500);
+    if (!usuario || !contrasenia) {
+      throw Error("Faltan credenciales");
     }
+
+    const usuarioEncontrado = await Usuario.findOne({ where: { usuario } });
+    if (!usuarioEncontrado) {
+      return res.status(404).json("Usuario no encontrado");
+    }
+
+    const contraseniaCorrecta = await compararContrasenias(contrasenia, usuarioEncontrado.contrasenia);
+    if (!contraseniaCorrecta) {
+      return res.status(400).json("Contraseña incorrecta");
+    }
+
+    const token = generarJWT({ id: usuarioEncontrado.id });
+
+    // Convertimos el objeto a JSON y quitamos la contraseña antes de enviarlo
+    const userData = usuarioEncontrado.toJSON();
+    delete userData.contrasenia;
+
+    return res.status(200).json({
+      token,
+      usuario: userData
+    });
+
+  } catch (error) {
+    console.error("❌ Error en login:", error);
+    return res.status(500).json("Error interno del servidor");
   }
+}
+
 
   static async olvideContrasenia(req, res) {
     try {
@@ -212,4 +222,7 @@ export class UsuarioController {
       return res.sendStatus(500);
     }
   }
+
+
+  
 }

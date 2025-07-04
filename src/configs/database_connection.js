@@ -12,6 +12,8 @@ import { Seccion } from "../models/seccion.js";
 import { Modulo } from "../models/modulo.js";
 import { Pregunta } from "../models/Pregunta.js";
 import { Respuesta } from "../models/Respuesta.js";
+import { InsigniaNivel } from "../models/Insignia_Nivel.js";
+
 
 async function connectDataBase() {
   try {
@@ -123,6 +125,25 @@ async function connectDataBase() {
       foreignKey: "id_pregunta",
       as: "pregunta",
     });
+
+    Nivel.hasOne(InsigniaNivel, {
+    foreignKey: "id_nivel",
+    as: "insigniaAsignada",
+    });
+    InsigniaNivel.belongsTo(Nivel, {
+    foreignKey: "id_nivel",
+    as: "nivel",
+    });
+
+// Insignia ↔ NivelInsignia (uno a uno)
+  Insignia.hasOne(InsigniaNivel, {
+    foreignKey: "id_insignia",
+    as: "nivelAsignado",
+  });
+  InsigniaNivel.belongsTo(Insignia, {
+  foreignKey: "id_insignia",
+  as: "insignia", 
+  });
 
     await sequelize.authenticate();
     await sequelize.sync({ force: false });

@@ -17,6 +17,7 @@ export const authenticate = async (req, res, next) => {
       }
       req.usuario = user;
       next();
+      console.log("✅ Usuario asignado en req.usuario:", user);
     }
   } catch (error) {
     return res.status(500).json({
