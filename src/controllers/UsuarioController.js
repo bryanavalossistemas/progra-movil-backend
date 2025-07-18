@@ -198,9 +198,9 @@ export class UsuarioController {
     try {
       await sequelize.transaction(async (t) => {
 
-        const { usuario, correo, contrasenia, edad, generoId } = req.body;
+        const { usuario, correo, edad, generoId } = req.body;
 
-        if (!usuario || !correo || !contrasenia || !edad || !generoId) {
+        if (!usuario || !correo || !edad || !generoId) {
           throw Error;
         }
 
@@ -210,7 +210,6 @@ export class UsuarioController {
 
         usuarioAutenticado.usuario = usuario;
         usuarioAutenticado.correo = correo;
-        usuarioAutenticado.contrasenia = contrasenia;
         usuarioAutenticado.edad = edad;
         usuarioAutenticado.id_genero = generoId;
 
